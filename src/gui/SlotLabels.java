@@ -11,18 +11,27 @@ public class SlotLabels extends GridPanel {
     public SlotLabels(int rows, int cols) {
         super(rows + 1, cols);
         labelList = new ArrayList<SlotLabel>(rows * cols);
-        for (char ch = 'A'; ch < 'A' + cols; ch++) {
+        addColumnIdentifiers(cols);
+        addEmptySlots(rows, cols);
+        SlotLabel firstLabel = labelList.get(0);
+        firstLabel.setBackground(Color.YELLOW);
+    }
+
+    private void addColumnIdentifiers(int cols) {
+		for (char ch = 'A'; ch < 'A' + cols; ch++) {
             add(new ColoredLabel(Character.toString(ch), Color.LIGHT_GRAY,
                     SwingConstants.CENTER));
         }
-        for (int row = 1; row <= rows; row++) {
+	}
+
+	private void addEmptySlots(int rows, int cols) {
+		for (int row = 1; row <= rows; row++) {
             for (char ch = 'A'; ch < 'A' + cols; ch++) {
                 SlotLabel label = new SlotLabel();
                 add(label);
                 labelList.add(label);
             }
         }
-        SlotLabel firstLabel = labelList.get(0);
-        firstLabel.setBackground(Color.YELLOW);
-    }
+	}
+
 }
