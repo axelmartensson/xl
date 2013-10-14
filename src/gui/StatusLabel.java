@@ -10,6 +10,7 @@ public class StatusLabel extends ColoredLabel implements Observer {
     }
 
     public void update(Observable observable, Object object) {
+    	//TODO add behavior
         setText("");
     }
 }
