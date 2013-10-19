@@ -8,6 +8,7 @@ package util;
 /**
  * Adjustment is a class for adjusting string representations of values within a
  * String.
+ * Note: use to format strings within slots
  */
 public class Adjustment {
     private int width;

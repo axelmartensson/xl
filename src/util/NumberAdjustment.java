@@ -8,6 +8,7 @@ package util;
 /**
  * Adjustment is a class for adjusting string representations of numerical
  * values within a String.
+ * Note: use to format strings within slots
  */
 public class NumberAdjustment extends Adjustment {
     private final static double log10 = Math.log(10.0);
