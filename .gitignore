@@ -1,5 +1,8 @@
 *.class
 
+# GREEN UML #
+*.grn
+
 # Package Files #
 *.jar
 *.war
