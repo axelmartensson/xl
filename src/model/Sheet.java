@@ -9,7 +9,7 @@ public class Sheet implements Environment{
 	@Override
 	public double value(String name) {
 //		try{
-		double value = slots.get(name).value();
+		double value = slots.get(name).value(this);
 //		} catch(XLEvalException e) { 
 //			e.setAddress(name); // slap on an address
 //			throw e; // and let somebody else worry about it

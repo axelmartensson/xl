@@ -3,6 +3,8 @@ package model;
 import java.util.Observable;
 import java.util.Observer;
 
+import expr.Environment;
+
 public class Slot extends Observable implements Observer {
 
 	private String content;
@@ -14,7 +16,7 @@ public class Slot extends Observable implements Observer {
 		
 	}
 
-	public double value() {
+	public double value(Environment env) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

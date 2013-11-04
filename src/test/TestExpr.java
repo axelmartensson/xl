@@ -1,6 +1,10 @@
-package expr;
+package test;
 
 import java.io.IOException;
+
+import expr.Environment;
+import expr.Expr;
+import expr.ExprParser;
 
 public class TestExpr {
     public static void main(String[] args) {
