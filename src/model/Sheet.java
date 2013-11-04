@@ -1,11 +1,21 @@
 package model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import expr.Environment;
 
 public class Sheet implements Environment{
 	private Map<String, Slot> slots;
+	
+	public Sheet() {
+		this.slots = new HashMap<String, Slot>();
+	}
+
+	public Sheet(Map<String, Slot> slots) {
+		this.slots = slots;
+	}
+
 	@Override
 	public double value(String name) {
 //		try{
@@ -22,6 +32,7 @@ public class Sheet implements Environment{
 			//TODO a man's gotta do what a man's got to do
 		} else {
 			Slot slot = SlotFactory.build(content);
+			
 		}
 	}
 
