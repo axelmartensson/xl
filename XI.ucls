@@ -280,8 +280,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="util.XLBufferedReader" project="xl" file="/xl/src/util/XLBufferedReader.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="32" language="java" name="gui.menu.XLBufferedReader" project="xl" 
+    file="/xl/src/gui/menu/XLBufferedReader.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="170" x="402" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -307,7 +307,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="util.XLPrintStream" project="xl" file="/xl/src/util/XLPrintStream.java" 
+  <class id="35" language="java" name="gui.menu.XLPrintStream" project="xl" file="/xl/src/gui/menu/XLPrintStream.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="204" x="926" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 

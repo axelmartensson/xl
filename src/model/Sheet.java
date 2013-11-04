@@ -17,4 +17,12 @@ public class Sheet implements Environment{
 		return value;
 	}
 
+	public void setSlot(String name, String content){
+		if(slots.containsKey(name)){
+			//TODO a man's gotta do what a man's got to do
+		} else {
+			Slot slot = SlotFactory.build(content);
+		}
+	}
+
 }

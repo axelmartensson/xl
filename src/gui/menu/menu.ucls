@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="false" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="gui.menu.NewMenuItem" project="xl" file="/xl/src/gui/menu/NewMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="191" x="532" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="gui.menu.ClearMenuItem" project="xl" file="/xl/src/gui/menu/ClearMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="191" x="301" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="gui.menu.SaveMenuItem" project="xl" file="/xl/src/gui/menu/SaveMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="178" x="1342" y="306"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="gui.menu.XLMenuBar" project="xl" file="/xl/src/gui/menu/XLMenuBar.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="195" x="1216" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="gui.menu.WindowMenu" project="xl" file="/xl/src/gui/menu/WindowMenu.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="176" x="1000" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="gui.menu.PrintMenuItem" project="xl" file="/xl/src/gui/menu/PrintMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="197" x="763" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="gui.menu.LoadMenuItem" project="xl" file="/xl/src/gui/menu/LoadMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="178" x="1560" y="306"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="gui.menu.XLPrintStream" project="xl" file="/xl/src/gui/menu/XLPrintStream.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="204" x="1702" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="gui.menu.XLBufferedReader" project="xl" 
+    file="/xl/src/gui/menu/XLBufferedReader.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="170" x="1946" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="gui.menu.ClearAllMenuItem" project="xl" 
+    file="/xl/src/gui/menu/ClearAllMenuItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="191" x="2156" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="gui.menu.OpenMenuItem" project="xl" file="/xl/src/gui/menu/OpenMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="211" x="1451" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="gui.menu.CloseMenuItem" project="xl" file="/xl/src/gui/menu/CloseMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="191" x="2387" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="gui.menu.WindowMenuItem" project="xl" file="/xl/src/gui/menu/WindowMenuItem.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="191" x="2618" y="97"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="14">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="15">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
