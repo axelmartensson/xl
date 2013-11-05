@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="2" language="java" name="model.ExprEvalStrategy" project="xl" file="/xl/src/model/ExprEvalStrategy.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="model.ExprSlot" project="xl" file="/xl/src/model/ExprSlot.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="115" width="162" x="849" y="282"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -46,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="model.StringEvalStrategy" project="xl" 
-    file="/xl/src/model/StringEvalStrategy.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="model.StringSlot" project="xl" file="/xl/src/model/StringSlot.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="115" width="162" x="1051" y="282"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      

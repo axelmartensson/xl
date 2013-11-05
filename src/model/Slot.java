@@ -4,17 +4,17 @@ import java.util.Observable;
 
 import expr.Environment;
 
-public class Slot extends Observable {
+public interface Slot {
 
-	private String content;
-	private EvalStrategy strategy;
+	double value(Environment env);
 	
-	public void setStrategy(EvalStrategy strategy){
-		this.strategy = strategy;
-	}
-	public double value(Environment env) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	/**
+	 * the string representation of the content in the slot
+	 * @param env
+	 * @return
+	 */
+	String representation(Environment env);
+		
+	
 
 }
