@@ -35,11 +35,18 @@ public class Sheet extends Observable implements Environment{
 
 	public void putSlot(String name, String content){
 			Slot slot = SlotFactory.build(content);
+			checkForCircularDependency(name, slot);
 			slots.put(name, slot);
 			setChanged();
 			notifyObservers();
 	}
 	
+	private void checkForCircularDependency(String name, Slot slot) {
+		Bomb bomb = new Bomb();
+		slots.put(name, bomb);
+		slot.value(this);
+	}
+
 	public void removeSlot(String name){
 		slots.remove(name);
 	}
@@ -53,5 +60,4 @@ public class Sheet extends Observable implements Environment{
 		Slot slot = slots.get(name);
 		return slot.toString();
 	}
-
 }
