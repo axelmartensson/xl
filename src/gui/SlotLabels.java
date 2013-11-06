@@ -12,16 +12,16 @@ import java.awt.event.MouseListener;
 public class SlotLabels extends GridPanel implements MouseListener{
 
 	private List<SlotLabel> labelList;
-    private SlotLabel currentLabel;
+    private CurrentLabel currentLabel;
 
     public SlotLabels(int rows, int cols) {
     	super(rows + 1, cols);
     	labelList = new ArrayList<SlotLabel>(rows * cols);
-    	  addColumnIdentifiers(cols);
+    	addColumnIdentifiers(cols);
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
-        currentLabel = firstLabel;
+        currentLabel = new CurrentLabel(firstLabel);
         
        
         
@@ -38,7 +38,8 @@ public class SlotLabels extends GridPanel implements MouseListener{
 	private void addEmptySlots(int rows, int cols) {
 		for (int row = 1; row <= rows; row++) {
             for (char ch = 'A'; ch < 'A' + cols; ch++) {
-                SlotLabel label = new SlotLabel();
+                SlotLabel label = new SlotLabel(currentLabel);
+               
                 add(label);
                 labelList.add(label);
             }
