@@ -1,14 +1,23 @@
 package gui;
 
 import java.awt.Color;
+import java.util.Observable;
+import java.util.Observer;
 /**
  * Keeps track of the currently focused label
  * used in StatusPanel
  * @author axel
  *
  */
-public class CurrentLabel extends ColoredLabel {
+public class CurrentLabel extends ColoredLabel implements Observer {
+	
     public CurrentLabel() {
         super("A1", Color.WHITE);
     }
+
+	@Override
+	public void update(Observable o, Object arg) {
+		this.setText("hej");
+		
+	}
 }

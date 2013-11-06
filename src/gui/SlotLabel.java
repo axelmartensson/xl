@@ -6,11 +6,11 @@ import java.awt.event.MouseListener;
 
 
 public class SlotLabel extends ColoredLabel implements MouseListener{
-    private CurrentLabel currentLabel;
-    public SlotLabel(CurrentLabel currentLabel) {
+    ;
+    public SlotLabel() {
         super("                    ", Color.WHITE, RIGHT);
         addMouseListener(this);
-        this.currentLabel = currentLabel;
+        
     }
 
 	@Override
@@ -33,9 +33,8 @@ public class SlotLabel extends ColoredLabel implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent MOUSE_PRESSED) {
-		currentLabel.set(this);
-		this.setBackground(Color.YELLOW);
 		
+		this.setBackground(Color.YELLOW);
 	}
 
 	@Override
