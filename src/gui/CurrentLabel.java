@@ -13,11 +13,14 @@ public class CurrentLabel extends ColoredLabel implements Observer {
 	
     public CurrentLabel() {
         super("A1", Color.WHITE);
+        
     }
 
-	@Override
+
+    
+    @Override
 	public void update(Observable o, Object arg) {
-		this.setText("hej");
+		setText("hje");
 		
 	}
 }

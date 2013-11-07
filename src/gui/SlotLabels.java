@@ -9,7 +9,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class SlotLabels extends GridPanel implements MouseListener{
+public class SlotLabels extends GridPanel{
 
 	private List<SlotLabel> labelList;
     private CurrentSlot currentSlot;
@@ -21,6 +21,9 @@ public class SlotLabels extends GridPanel implements MouseListener{
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
+        currentSlot = new CurrentSlot(labelList.get(0));
+        
+        
         
  
         
@@ -34,45 +37,17 @@ public class SlotLabels extends GridPanel implements MouseListener{
 	}
 
 	private void addEmptySlots(int rows, int cols) {
+		StringBuilder stringBuilder = new StringBuilder();
 		for (int row = 1; row <= rows; row++) {
             for (char ch = 'A'; ch < 'A' + cols; ch++) {
-				SlotLabel label = new SlotLabel();
+            	stringBuilder.append(ch);
+            	stringBuilder.append(row);
+				SlotLabel label = new SlotLabel(stringBuilder.toString());
                 add(label);
                 labelList.add(label);
             }
         }
 	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent MOUSE_PRESSED) {
-		
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 
 	
 }
