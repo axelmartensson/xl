@@ -17,11 +17,11 @@ public class SlotLabels extends GridPanel{
     public SlotLabels(int rows, int cols, CurrentSlot currentSlot) {
     	super(rows + 1, cols);
     	labelList = new ArrayList<SlotLabel>(rows * cols);
+        this.currentSlot=currentSlot;
     	addColumnIdentifiers(cols);
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
-        this.currentSlot=currentSlot;
         currentSlot.set(firstLabel);
         
         
