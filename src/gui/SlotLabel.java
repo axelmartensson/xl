@@ -13,8 +13,8 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer{
 	
     public SlotLabel(String name, CurrentSlot currentSlot) {
         super("                    ", Color.WHITE, RIGHT);
-        name = slotName;
-        this.currentSlot=currentSlot;
+        slotName = name;
+        this.currentSlot = currentSlot;
         addMouseListener(this);
         
     }
@@ -56,7 +56,7 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer{
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		setBackground(Color.WHITE);
+		//setBackground(Color.WHITE);
 		
 		
 		

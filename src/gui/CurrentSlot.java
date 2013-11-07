@@ -6,7 +6,7 @@ import java.util.Observer;
 
 public class CurrentSlot extends Observable {
 		private SlotLabel currentSlot;
-
+		
 		public CurrentSlot(){
 			
 			
@@ -20,8 +20,10 @@ public class CurrentSlot extends Observable {
 		slotLabel.setBackground(Color.YELLOW);
 		currentSlot = slotLabel;
 		addObserver(slotLabel);
+		//System.out.println(currentSlot.name()); 
 		setChanged();
-		notifyObservers();
+		notifyObservers(currentSlot.name());
+		
 		
 	}
 		

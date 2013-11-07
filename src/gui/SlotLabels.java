@@ -17,12 +17,13 @@ public class SlotLabels extends GridPanel{
     public SlotLabels(int rows, int cols, CurrentSlot currentSlot) {
     	super(rows + 1, cols);
     	labelList = new ArrayList<SlotLabel>(rows * cols);
-        this.currentSlot=currentSlot;
+    	this.currentSlot = currentSlot;
     	addColumnIdentifiers(cols);
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
-        firstLabel.setBackground(Color.YELLOW);
+        //firstLabel.setBackground(Color.YELLOW); <- Behövs inte, kommer att kallas på i currentSlot.set(firstLabel)
         currentSlot.set(firstLabel);
+        
         
         
         
@@ -38,14 +39,19 @@ public class SlotLabels extends GridPanel{
 	}
 
 	private void addEmptySlots(int rows, int cols) {
-		StringBuilder stringBuilder = new StringBuilder();
+		
 		for (int row = 1; row <= rows; row++) {
             for (char ch = 'A'; ch < 'A' + cols; ch++) {
+            	StringBuilder stringBuilder = new StringBuilder();
             	stringBuilder.append(ch);
             	stringBuilder.append(row);
-				SlotLabel label = new SlotLabel(stringBuilder.toString(),currentSlot);
-                add(label);
+            	//System.out.println(stringBuilder.toString()); namnen funkar nu
+            	String name = stringBuilder.toString();
+				SlotLabel label = new SlotLabel(name , currentSlot);
+                //System.out.println(label.name()); konstruktorn i SlotLabel hade vänt på name och SlotName
+				add(label);
                 labelList.add(label);
+                
             }
         }
 	}
