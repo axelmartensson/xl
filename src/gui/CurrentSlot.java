@@ -1,14 +1,14 @@
 package gui;
 
+import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
 
 public class CurrentSlot extends Observable {
 		private SlotLabel currentSlot;
 
-		public CurrentSlot(SlotLabel slotLabel){
-			currentSlot= slotLabel;
-			addObserver(currentSlot);
+		public CurrentSlot(){
+			
 			
 		}
 
@@ -17,12 +17,11 @@ public class CurrentSlot extends Observable {
 		}
 		
 		public void set(SlotLabel slotLabel) {
-		SlotLabel tempSlot = currentSlot;
+		slotLabel.setBackground(Color.YELLOW);
 		currentSlot = slotLabel;
+		addObserver(slotLabel);
 		setChanged();
 		notifyObservers();
-		deleteObserver(tempSlot);
-		addObserver(slotLabel);
 		
 	}
 		

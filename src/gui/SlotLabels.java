@@ -14,14 +14,15 @@ public class SlotLabels extends GridPanel{
 	private List<SlotLabel> labelList;
     private CurrentSlot currentSlot;
 
-    public SlotLabels(int rows, int cols) {
+    public SlotLabels(int rows, int cols, CurrentSlot currentSlot) {
     	super(rows + 1, cols);
     	labelList = new ArrayList<SlotLabel>(rows * cols);
     	addColumnIdentifiers(cols);
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
-        currentSlot = new CurrentSlot(labelList.get(0));
+        this.currentSlot=currentSlot;
+        currentSlot.set(firstLabel);
         
         
         
