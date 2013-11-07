@@ -3,18 +3,27 @@ package gui;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.SwingConstants;
 
-public class SlotLabels extends GridPanel {
-    private List<SlotLabel> labelList;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+public class SlotLabels extends GridPanel implements MouseListener{
+
+	private List<SlotLabel> labelList;
+    private CurrentSlot currentSlot;
 
     public SlotLabels(int rows, int cols) {
-        super(rows + 1, cols);
-        labelList = new ArrayList<SlotLabel>(rows * cols);
-        addColumnIdentifiers(cols);
+    	super(rows + 1, cols);
+    	labelList = new ArrayList<SlotLabel>(rows * cols);
+    	addColumnIdentifiers(cols);
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
+        
+ 
+        
     }
 
     private void addColumnIdentifiers(int cols) {
@@ -27,11 +36,43 @@ public class SlotLabels extends GridPanel {
 	private void addEmptySlots(int rows, int cols) {
 		for (int row = 1; row <= rows; row++) {
             for (char ch = 'A'; ch < 'A' + cols; ch++) {
-                SlotLabel label = new SlotLabel();
+				SlotLabel label = new SlotLabel();
                 add(label);
                 labelList.add(label);
             }
         }
 	}
 
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent MOUSE_PRESSED) {
+		
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	
 }
