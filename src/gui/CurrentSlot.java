@@ -8,6 +8,8 @@ public class CurrentSlot extends Observable {
 
 		public CurrentSlot(SlotLabel slotLabel){
 			currentSlot= slotLabel;
+			addObserver(currentSlot);
+			
 		}
 
 		public String getName(){
