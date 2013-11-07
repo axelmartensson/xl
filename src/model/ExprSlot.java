@@ -11,15 +11,12 @@ import expr.ExprParser;
 
 public class ExprSlot implements Slot {
 	private Expr expr;
-	public ExprSlot(String content){
-		ExprParser parser = new ExprParser(); //used to create Expression from content
-		try{
-			expr = parser.build(content);
-		} catch (IOException e){
-			throw new XLException("failed to parse content: "+content);
-		}
-	}
+
 	
+	public ExprSlot(Expr expr) {
+		this.expr = expr;
+	}
+
 	@Override
 	public double value(Environment env) {
 		return expr.value(env);
