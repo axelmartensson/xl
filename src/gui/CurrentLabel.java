@@ -10,18 +10,18 @@ import java.util.Observer;
  *
  */
 public class CurrentLabel extends ColoredLabel implements Observer {
-	//private CurrentSlot currentSlot;
+	private CurrentSlot currentSlot;
 	
     public CurrentLabel(CurrentSlot currentSlot) {
         super("A1", Color.WHITE);
-        //this.currentSlot = currentSlot;
+        this.currentSlot = currentSlot;
         currentSlot.addObserver(this);
        
     }
     
     
     @Override
-	public void update(Observable o, Object name) {
-    	setText((String) name);
+	public void update(Observable o, Object obj) {
+    	setText(currentSlot.getName());
 	}
 }

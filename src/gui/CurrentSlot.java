@@ -22,7 +22,7 @@ public class CurrentSlot extends Observable {
 		addObserver(slotLabel);
 		//System.out.println(currentSlot.name()); 
 		setChanged();
-		notifyObservers(currentSlot.name());
+		notifyObservers();
 		
 		
 	}

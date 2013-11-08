@@ -58,8 +58,6 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer{
 	public void update(Observable arg0, Object arg1) {
 		//setBackground(Color.WHITE);
 		
-		
-		
 	}
     
 
