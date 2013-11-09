@@ -2,7 +2,9 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Observable;
+import java.util.Set;
 
 import util.XLException;
 import expr.Environment;
@@ -65,5 +67,10 @@ public class Sheet extends Observable implements Environment{
 			return "";
 		}
 		return slot.toString();
+	}
+
+	public Set<Entry<String, Slot>> getEntries() {
+		// TODO Auto-generated method stub
+		return slots.entrySet();
 	}
 }

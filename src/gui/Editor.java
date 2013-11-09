@@ -31,7 +31,6 @@ public class Editor extends JTextField implements Observer, ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// Assuming user pressed Enter key
-		System.out.println("hejl");
 		String name = currentSlot.getName();
 		String input = getText();
 		sheet.putSlot(name, input);

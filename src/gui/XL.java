@@ -9,11 +9,14 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import model.Sheet;
+import model.Slot;
 
 public class XL extends JFrame implements Printable {
     private static final int ROWS = 10, COLUMNS = 8;
@@ -21,6 +24,7 @@ public class XL extends JFrame implements Printable {
     private StatusLabel statusLabel = new StatusLabel();
     private XLList xlList;
     private CurrentSlot currentSlot;
+    private Sheet sheet;
 
     public XL(XL oldXL) {
         this(oldXL.xlList, oldXL.counter);
@@ -28,7 +32,7 @@ public class XL extends JFrame implements Printable {
 
     public XL(XLList xlList, XLCounter counter) {
         super("Untitled-" + counter);
-        Sheet sheet = new Sheet();
+        sheet = new Sheet();
         this.xlList = xlList;
         this.counter = counter;
         xlList.add(this);
@@ -66,4 +70,8 @@ public class XL extends JFrame implements Printable {
     public static void main(String[] args) {
         new XL(new XLList(), new XLCounter());
     }
+
+	public Set<Entry<String, Slot>> getData() {
+		return sheet.getEntries();
+	}
 }
