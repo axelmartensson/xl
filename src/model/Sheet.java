@@ -53,11 +53,17 @@ public class Sheet extends Observable implements Environment{
 	
 	public String slotRepresentation(String name){
 		Slot slot = slots.get(name);
+		if(slot == null){
+			return "";
+		}
 		return slot.representation(this);
 	}
 	
 	public String editorRepresentation (String name){
 		Slot slot = slots.get(name);
+		if(slot == null){
+			return "";
+		}
 		return slot.toString();
 	}
 }

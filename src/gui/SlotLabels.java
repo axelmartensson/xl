@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.swing.SwingConstants;
 
+import model.Sheet;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -13,22 +15,17 @@ public class SlotLabels extends GridPanel{
 
 	private List<SlotLabel> labelList;
     private CurrentSlot currentSlot;
+    private Sheet sheet;
 
-    public SlotLabels(int rows, int cols, CurrentSlot currentSlot) {
+    public SlotLabels(int rows, int cols, CurrentSlot currentSlot, Sheet sheet) {
     	super(rows + 1, cols);
     	labelList = new ArrayList<SlotLabel>(rows * cols);
     	this.currentSlot = currentSlot;
+    	this.sheet = sheet;
     	addColumnIdentifiers(cols);
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
-        //firstLabel.setBackground(Color.YELLOW); <- Beh�vs inte, kommer att kallas p� i currentSlot.set(firstLabel)
         currentSlot.set(firstLabel);
-        
-        
-        
-        
- 
-        
     }
 
     private void addColumnIdentifiers(int cols) {
@@ -46,7 +43,7 @@ public class SlotLabels extends GridPanel{
             	stringBuilder.append(ch);
             	stringBuilder.append(row);
             	String name = stringBuilder.toString();
-				SlotLabel label = new SlotLabel(name , currentSlot);
+				SlotLabel label = new SlotLabel(name , currentSlot, sheet);
 				add(label);
                 labelList.add(label);
                 
