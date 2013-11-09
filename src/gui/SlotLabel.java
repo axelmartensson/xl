@@ -39,9 +39,8 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer{
 
 	@Override
 	public void mousePressed(MouseEvent MOUSE_PRESSED) {
+		setBackground(Color.YELLOW);
 		currentSlot.set(this);
-		
-		
 	}
 
 	@Override
@@ -56,7 +55,8 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer{
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		//setBackground(Color.WHITE);
+		setBackground(Color.WHITE);
+		currentSlot.deleteObserver(this);
 		
 	}
     
