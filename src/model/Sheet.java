@@ -70,7 +70,11 @@ public class Sheet extends Observable implements Environment{
 	}
 
 	public Set<Entry<String, Slot>> getEntries() {
-		// TODO Auto-generated method stub
 		return slots.entrySet();
+	}
+	public Map<String,Slot> setEntries(){
+		setChanged();
+		notifyObservers();
+		return slots;
 	}
 }
