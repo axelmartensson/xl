@@ -29,16 +29,21 @@ public class Sheet extends Observable implements Environment{
 			throw new XLException("Cannot refer to empty slot: "+name);
 		}
 		double value = slot.value(this);
-//		} catch(XLEvalException e) { 
-//			e.setAddress(name); // slap on an address
-//			throw e; // and let somebody else worry about it
+//		} catch(XLException e) { 
+//			throw new XLException(e.getMsg()+name); //slap on an address and let somebody else worry about it
 //		}
 		return value;
 	}
 
 	public void putSlot(String name, String content){
 			Slot slot = SlotFactory.build(content);
-			checkForCircularDependency(name, slot);
+			Slot oldSlot = slots.get(name);
+			try {
+				checkForCircularDependency(name, slot);
+			} catch (Exception e) {
+				slots.put(name, oldSlot);
+				throw e;
+			}
 			slots.put(name, slot);
 			setChanged();
 			notifyObservers();
