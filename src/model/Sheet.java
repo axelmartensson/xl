@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -88,8 +89,12 @@ public class Sheet extends Observable implements Environment{
 		return slots.entrySet();
 	}
 	public Map<String,Slot> setEntries(){
-		setChanged();
-		notifyObservers();
+		
+		Collection<Slot> c = slots.values();
+		for(Slot s : c){
+			//s.putSlot(s.representation(env), s.value(env))
+			
+		}
 		return slots;
 	}
 }
