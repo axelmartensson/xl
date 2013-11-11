@@ -43,7 +43,7 @@ public class SlotLabel extends ColoredLabel implements MouseListener, Observer{
 
 	@Override
 	public void mousePressed(MouseEvent MOUSE_PRESSED) {
-		setBackground(Color.YELLOW);
+		
 		currentSlot.set(this);
 		setText(sheet.slotRepresentation(slotName));
 	}

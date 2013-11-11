@@ -18,6 +18,7 @@ public class CurrentSlot extends Observable {
 		
 		public void set(SlotLabel slotLabel) {
 		currentSlot = slotLabel;
+		currentSlot.setBackground(Color.YELLOW);
 		setChanged();
 		notifyObservers();
 		addObserver(slotLabel);
