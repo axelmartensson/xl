@@ -25,7 +25,7 @@ class LoadMenuItem extends OpenMenuItem {
 	 */
 	protected void action(String path) throws FileNotFoundException {
 		try {
-			statusLabel.setText("");
+			statusLabel.clear();
 			XLBufferedReader reader = new XLBufferedReader(path);
 			HashMap<String, Slot> map = new HashMap<String, Slot>();
 			reader.load(map);

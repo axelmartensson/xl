@@ -8,5 +8,9 @@ public class StatusLabel extends ColoredLabel {
     public StatusLabel() {
         super("", Color.WHITE);
     }
+
+	public void clear() {
+		setText("");
+	}
     
 }
