@@ -10,15 +10,16 @@ import javax.swing.JTextField;
 
 import model.Sheet;
 
-public class Editor extends JTextField implements Observer, ActionListener{
+public class Editor extends JTextField implements Observer, ActionListener {
 	private CurrentSlot currentSlot;
 	private Sheet sheet;
-    public Editor(CurrentSlot currentSlot, Sheet sheet) {
-    	this.currentSlot = currentSlot;
-    	this.sheet = sheet;
-        setBackground(Color.WHITE);
-        addActionListener(this);
-    }
+
+	public Editor(CurrentSlot currentSlot, Sheet sheet) {
+		this.currentSlot = currentSlot;
+		this.sheet = sheet;
+		setBackground(Color.WHITE);
+		addActionListener(this);
+	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
@@ -33,9 +34,12 @@ public class Editor extends JTextField implements Observer, ActionListener{
 		// Assuming user pressed Enter key
 		String name = currentSlot.getName();
 		String input = getText();
-		sheet.putSlot(name, input);
-		setText("");
+		if (input.equals("")) {
+			sheet.removeSlot(name);
+		} else {
+			sheet.putSlot(name, input);
+			setText("");
+		}
 	}
-    
-    
+
 }

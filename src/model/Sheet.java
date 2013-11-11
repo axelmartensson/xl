@@ -50,7 +50,22 @@ public class Sheet extends Observable implements Environment{
 	}
 
 	public void removeSlot(String name){
+		Slot slot = slots.get(name);
+		Bomb bomb = new Bomb();
+		slots.put(name, bomb);
+		try {
+			for (Slot s : slots.values()) {
+				if(s != bomb){
+					s.value(this);
+				}
+			}
+		} catch (XLException e) {
+			slots.put(name, slot);
+			throw new XLException("Cannot remove cell "+name);
+		}
 		slots.remove(name);
+		setChanged();
+		notifyObservers();
 	}
 	
 	public String slotRepresentation(String name){
