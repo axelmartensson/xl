@@ -20,7 +20,7 @@ class LoadMenuItem extends OpenMenuItem {
  * */
     protected void action(String path) throws FileNotFoundException {
         XLBufferedReader reader = new XLBufferedReader(path);
-        reader.load(xl.setData());
+        //reader.load();
         
     }
 
