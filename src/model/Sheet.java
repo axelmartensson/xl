@@ -46,7 +46,12 @@ public class Sheet extends Observable implements Environment{
 	private void checkForCircularDependency(String name, Slot slot) {
 		Bomb bomb = new Bomb();
 		slots.put(name, bomb);
-		slot.value(this);
+		try {
+			slot.value(this);
+		} catch (XLException e) {
+			slots.remove(name);
+			throw e;
+		}
 	}
 
 	public void removeSlot(String name){
@@ -85,7 +90,12 @@ public class Sheet extends Observable implements Environment{
 	}
 
 	public Set<Entry<String, Slot>> getEntries() {
-		// TODO Auto-generated method stub
 		return slots.entrySet();
+	}
+
+	public void clearAll() {
+		slots = new HashMap<String, Slot>();
+		setChanged();
+		notifyObservers();
 	}
 }
