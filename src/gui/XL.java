@@ -16,67 +16,68 @@ import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import util.XLException;
 import model.Sheet;
 import model.Slot;
 
 public class XL extends JFrame implements Printable {
-    private static final int ROWS = 10, COLUMNS = 8;
-    private XLCounter counter;
-    private StatusLabel statusLabel = new StatusLabel();
-    private XLList xlList;
-    private CurrentSlot currentSlot;
-    private Sheet sheet;
+	private static final int ROWS = 10, COLUMNS = 8;
+	private XLCounter counter;
+	private StatusLabel statusLabel = new StatusLabel();
+	private XLList xlList;
+	private CurrentSlot currentSlot;
+	private Sheet sheet;
 
-    public XL(XL oldXL) {
-        this(oldXL.xlList, oldXL.counter);
-    }
+	public XL(XL oldXL) {
+		this(oldXL.xlList, oldXL.counter);
+	}
 
-    public XL(XLList xlList, XLCounter counter) {
-        super("Untitled-" + counter);
-        sheet = new Sheet();
-        this.xlList = xlList;
-        this.counter = counter;
-        xlList.add(this);
-        counter.increment();
-        currentSlot = new CurrentSlot();
-        JPanel statusPanel = new StatusPanel(statusLabel, currentSlot);
-        JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, currentSlot, sheet);
-        Editor editor = new Editor(currentSlot, sheet, statusLabel);
-        add(NORTH, statusPanel);
-        add(CENTER, editor);
-        add(SOUTH, sheetPanel);
+	public XL(XLList xlList, XLCounter counter) {
+		super("Untitled-" + counter);
+		sheet = new Sheet();
+		this.xlList = xlList;
+		this.counter = counter;
+		xlList.add(this);
+		counter.increment();
+		currentSlot = new CurrentSlot();
+		JPanel statusPanel = new StatusPanel(statusLabel, currentSlot);
+		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, currentSlot, sheet);
+		Editor editor = new Editor(currentSlot, sheet, statusLabel);
+		add(NORTH, statusPanel);
+		add(CENTER, editor);
+		add(SOUTH, sheetPanel);
 
-        setJMenuBar(new XLMenuBar(this, xlList, statusLabel, currentSlot, sheet));
-        pack();
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
-    }
+		setJMenuBar(new XLMenuBar(this, xlList, statusLabel, currentSlot, sheet));
+		pack();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setResizable(false);
+		setVisible(true);
+	}
 
-    public int print(Graphics g, PageFormat pageFormat, int page) {
-        if (page > 0)
-            return NO_SUCH_PAGE;
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-        printAll(g2d);
-        return PAGE_EXISTS;
-    }
+	public int print(Graphics g, PageFormat pageFormat, int page) {
+		if (page > 0)
+			return NO_SUCH_PAGE;
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+		printAll(g2d);
+		return PAGE_EXISTS;
+	}
 
-    public void rename(String title) {
-        setTitle(title);
-        xlList.setChanged();
-        xlList.notifyObservers();
-    }
+	public void rename(String title) {
+		setTitle(title);
+		xlList.setChanged();
+		xlList.notifyObservers();
+	}
 
-    public static void main(String[] args) {
-        new XL(new XLList(), new XLCounter());
-    }
+	public static void main(String[] args) {
+		new XL(new XLList(), new XLCounter());
+	}
 
 	public Set<Entry<String, Slot>> getData() {
 		return sheet.getEntries();
 	}
-	
+
 	public void setData(Map<String, Slot> map) {
-		sheet.setMap(map);
+		sheet.load(map);
 	}
 }

@@ -23,40 +23,29 @@ public class Sheet extends Observable implements Environment{
 
 	@Override
 	public double value(String name) {
-//		try{
 		Slot slot = slots.get(name);
 		if (slot == null){
 			throw new XLException("Cannot refer to empty slot: "+name);
 		}
-		double value = slot.value(this);
-//		} catch(XLException e) { 
-//			throw new XLException(e.getMsg()+name); //slap on an address and let somebody else worry about it
-//		}
-		return value;
+		return slot.value(this);
 	}
 
 	public void putSlot(String name, String content){
 			Slot slot = SlotFactory.build(content);
-			Slot oldSlot = slots.get(name);
-			try {
-				checkForCircularDependency(name, slot);
-			} catch (Exception e) {
-				slots.put(name, oldSlot);
-				throw e;
-			}
+			checkForCircularDependency(name, slot);
 			slots.put(name, slot);
 			setChanged();
 			notifyObservers();
 	}
 	
 	private void checkForCircularDependency(String name, Slot slot) {
+		Slot oldSlot = slots.get(name);
 		Bomb bomb = new Bomb();
 		slots.put(name, bomb);
 		try {
 			slot.value(this);
-		} catch (XLException e) {
-			slots.remove(name);
-			throw e;
+		} finally {
+			slots.put(name, oldSlot);
 		}
 	}
 
@@ -99,8 +88,17 @@ public class Sheet extends Observable implements Environment{
 		return slots.entrySet();
 	}
 	
-	public void setMap(Map<String, Slot> map) {
+	public void load(Map<String, Slot> map) {
+		Map<String, Slot> oldSlots = slots;
 		slots = map;
+		try {
+			for (Entry<String, Slot> e : slots.entrySet()) {
+				checkForCircularDependency(e.getKey(), e.getValue());
+			}
+		} catch (XLException e) {
+			slots = oldSlots;
+			throw e;
+		}
 		setChanged();
 		notifyObservers();
 	}

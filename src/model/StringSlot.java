@@ -10,9 +10,7 @@ public class StringSlot implements Slot{
 	}
 
 	@Override
-	public double value(Environment env)  { // throws XLEvalException
-		
-		// throw new XLEvalException("Cannot evaluate comments as expression");
+	public double value(Environment env)  {
 		return 0;
 	}
 
