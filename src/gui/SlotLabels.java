@@ -25,7 +25,9 @@ public class SlotLabels extends GridPanel{
     	addColumnIdentifiers(cols);
         addEmptySlots(rows, cols);
         SlotLabel firstLabel = labelList.get(0);
+        firstLabel.setBackground(Color.YELLOW);
         currentSlot.set(firstLabel);
+        
     }
 
     private void addColumnIdentifiers(int cols) {

@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
