@@ -75,4 +75,8 @@ public class XL extends JFrame implements Printable {
 	public Set<Entry<String, Slot>> getData() {
 		return sheet.getEntries();
 	}
+	
+	public void setData(Map<String, Slot> map) {
+		sheet.setMap(map);
+	}
 }

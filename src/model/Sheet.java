@@ -93,6 +93,12 @@ public class Sheet extends Observable implements Environment{
 	public Set<Entry<String, Slot>> getEntries() {
 		return slots.entrySet();
 	}
+	
+	public void setMap(Map<String, Slot> map) {
+		slots = map;
+		setChanged();
+		notifyObservers();
+	}
 
 	public void clearAll() {
 		slots = new HashMap<String, Slot>();
